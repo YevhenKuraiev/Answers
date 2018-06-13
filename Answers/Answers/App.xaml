@@ -12,7 +12,7 @@
 
             <Style x:Key="LabelStyleBlackRobotoRegular" TargetType="Label">
                 <Setter Property="TextColor" Value="Black" />
-                <Setter Property="FontFamily" Value="{StaticResource RobotoRegular}"/>
+                <!--<Setter Property="FontFamily" Value="{StaticResource RobotoRegular}"/>-->
             </Style>
         </ResourceDictionary>
     </Application.Resources>
