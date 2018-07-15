@@ -2,7 +2,7 @@
 
 namespace Answers.Models
 {
-    internal class ImageQuestionModel
+    internal class QuestionModel
     {
         public string QuestionText { get; set; }
         public ImageSource QuestionImage { get; set; }

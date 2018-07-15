@@ -6,10 +6,12 @@
 
   <ItemGroup>
     <None Remove="Images\Architecture\Image1.png" />
+    <None Remove="Images\Shared\magnifier.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Images\Architecture\Image1.png" />
+    <EmbeddedResource Include="Images\Shared\magnifier.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,19 +20,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\ImageQuestionsPage.xaml.cs">
-      <DependentUpon>ImageQuestionsPage.xaml</DependentUpon>
+    <Compile Update="Views\QuestionsPage.xaml.cs">
+      <DependentUpon>QuestionsPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\TextQuestionsPage.xaml.cs">
-      <DependentUpon>TextQuestionsPage.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\ImageQuestionsPage.xaml">
+    <EmbeddedResource Update="Views\QuestionsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MainPage.xaml">

@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:views="clr-namespace:Answers.Views"
             Padding="0"
+            x:Name="MainTabPage"
             x:Class="Answers.Views.MainPage">
-  <!--Pages can be added as references or inline-->
+  <!--Pages can be added as references or inline--><!--
     <views:TextQuestionsPage Title="ПИ" />
-    <views:ImageQuestionsPage Title="БД" />
-    <views:ImageQuestionsPage Title="Арх ПО" />
+    <views:QuestionsPage Title="БД" />
+    <views:QuestionsPage Title="Арх ПО" />-->
 </TabbedPage>

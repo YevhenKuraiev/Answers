@@ -4,13 +4,13 @@ using Xamarin.Forms;
 
 namespace Answers.DbInitilizers
 {
-    internal class ArchitectureAndSoftDesignInitializer
+    internal class ArchitectureAndSoftDesignInitializer : IInitizlizer
     {
-        public List<ImageQuestionModel> GetInitizlizedList()
+        public List<QuestionModel> GetInitizlizedList()
         {
-            return new List<ImageQuestionModel>
+            return new List<QuestionModel>
             {
-                new ImageQuestionModel
+                new QuestionModel
                 {
                 QuestionText = "В типовой архитектуре приложения к уровню логики приолжения относятся:",
                 QuestionImage = ImageSource.FromResource("Answers.Images.Architecture.Image1.png"),

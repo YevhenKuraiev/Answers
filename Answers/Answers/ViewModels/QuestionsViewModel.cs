@@ -1,15 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
+using System.Text;
 using Answers.Models;
+using Xamarin.Forms;
 
 namespace Answers.ViewModels
 {
-    internal class TextQuestionsViewModel : BaseViewModel
+    internal class QuestionsViewModel : BaseViewModel
     {
         private string _findingText;
-        private readonly List<TextQuestionModel> _listOfQuestions;
-        public ObservableCollection<TextQuestionModel> SelectedQuestions { get; set; }
+        private readonly List<QuestionModel> _listOfQuestions;
+        public ObservableCollection<QuestionModel> SelectedQuestions { get; set; }
         public string FindingText
         {
             get => _findingText;
@@ -23,20 +27,17 @@ namespace Answers.ViewModels
             }
         }
 
-        public TextQuestionsViewModel(List<TextQuestionModel> listOfQuestions)
+        public QuestionsViewModel(List<QuestionModel> listOfQuestions)
         {
             _listOfQuestions = listOfQuestions;
-            SelectedQuestions = new ObservableCollection<TextQuestionModel>(_listOfQuestions);
+            SelectedQuestions = new ObservableCollection<QuestionModel>(_listOfQuestions);
         }
 
         private void SelectList(string findingText)
         {
-            SelectedQuestions = new ObservableCollection<TextQuestionModel>
+            SelectedQuestions = new ObservableCollection<QuestionModel>
                 (_listOfQuestions.Where(x => x.QuestionText.ToUpper().Contains(findingText.ToUpper())));
         }
 
-
     }
-
-
 }
