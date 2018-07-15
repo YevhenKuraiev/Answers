@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using Answers.Models;
+using Xamarin.Forms;
 
 namespace Answers.ViewModels
 {
-    internal class ImageQuestionViewModel : BaseViewModel
+    internal class ImageQuestionsViewModel : BaseViewModel
     {
         private string _findingText;
-        private readonly List<ImageQuestionModel> _listOfQuestions = new List<ImageQuestionModel>();
+        private readonly List<ImageQuestionModel> _listOfQuestions;
+        public ObservableCollection<ImageQuestionModel> SelectedQuestions { get; set; }
         public string FindingText
         {
             get => _findingText;
@@ -24,20 +27,9 @@ namespace Answers.ViewModels
             }
         }
 
-        public ObservableCollection<ImageQuestionModel> SelectedQuestions { get; set; }
-
-
-        private void UpdateList(ImageQuestionModel selectedQuestion)
+        public ImageQuestionsViewModel(List<ImageQuestionModel> listOfQuestions)
         {
-            var index = SelectedQuestions.IndexOf(selectedQuestion);
-            SelectedQuestions.Remove(selectedQuestion);
-            SelectedQuestions.Insert(index, selectedQuestion);
-        }
-
-
-        public ImageQuestionViewModel()
-        {
-            InitializeList();
+            _listOfQuestions = listOfQuestions;
             SelectedQuestions = new ObservableCollection<ImageQuestionModel>(_listOfQuestions);
         }
 
@@ -46,16 +38,6 @@ namespace Answers.ViewModels
             SelectedQuestions = new ObservableCollection<ImageQuestionModel>
                 (_listOfQuestions.Where(x => x.QuestionText.ToUpper().Contains(findingText.ToUpper())));
         }
-
-
-        private void InitializeList()
-        {
-            _listOfQuestions.Add(new ImageQuestionModel
-            {
-                QuestionImage = ""
-            });
-        }
-
 
     }
 }

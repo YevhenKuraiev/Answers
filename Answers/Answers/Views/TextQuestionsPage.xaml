@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Answers.Views.ImageQuestionPage">
+             xmlns:indicator="clr-namespace:Answers.CustomControls"
+             BackgroundColor="WhiteSmoke"
+             Padding="0"
+             x:Class="Answers.Views.TextQuestionsPage">
     <ListView ItemsSource="{Binding SelectedQuestions}"
                       SelectedItem="{Binding SelectedQuestion, Mode=TwoWay}"
                       HasUnevenRows="True"
@@ -22,6 +25,9 @@
                 <ViewCell>
                     <ViewCell.View>
                         <StackLayout Padding="0, 0, 10, 0">
+                            <Label Text="{Binding QuestionText}" 
+                                   Style="{StaticResource LabelStyleBlackRobotoRegular}"
+                                   FontSize="14" />
                             <Image Source="{Binding QuestionImage}"></Image>
                             <Label Text="{Binding AnswerText}" 
                                    Style="{StaticResource LabelStyleBlackRobotoRegular}"

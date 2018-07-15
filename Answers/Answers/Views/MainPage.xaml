@@ -5,6 +5,7 @@
             Padding="0"
             x:Class="Answers.Views.MainPage">
   <!--Pages can be added as references or inline-->
-    <views:TextQuestionPage Title="Текст" />
-    <views:ImageQuestionPage Title="Картинки" />
+    <views:TextQuestionsPage Title="ПИ" />
+    <views:ImageQuestionsPage Title="БД" />
+    <views:ImageQuestionsPage Title="Арх ПО" />
 </TabbedPage>
