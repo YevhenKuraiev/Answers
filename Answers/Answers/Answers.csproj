@@ -5,11 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="DbInitilizers\answers.json" />
     <None Remove="Images\Architecture\Image1.png" />
     <None Remove="Images\Shared\magnifier.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="DbInitilizers\answers.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Images\Architecture\Image1.png" />
     <EmbeddedResource Include="Images\Shared\magnifier.png" />
   </ItemGroup>
@@ -17,6 +21,16 @@
   <ItemGroup>
     <PackageReference Include="PropertyChanged.Fody" Version="2.5.8" />
     <PackageReference Include="Xamarin.Forms" Version="3.0.0.550146" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\KhAITestParser-master\KhAITestParser-master\KhAITestParser\KhAITestParser.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v7.1\Mono.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +47,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TestPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

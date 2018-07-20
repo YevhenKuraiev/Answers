@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Тестирование"
+             x:Class="Answers.Views.TestPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label Text="{Binding CurrentQuestion.Text}" FontSize="16" FontAttributes="Bold"></Label>
+
+            <ListView ItemsSource="{Binding CurrentQuestion.Variants}" SeparatorColor="Black">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                <Switch IsToggled="{Binding IsSelected}"/>
+                                <Label Text="{Binding Variant}" FontSize="14" FontAttributes="Bold"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Следующий вопрос" Command="{Binding NextQuestionCommand}" CommandParameter="{Binding CurrentQuestion.Text}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

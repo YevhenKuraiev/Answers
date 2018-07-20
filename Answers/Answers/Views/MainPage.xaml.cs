@@ -12,16 +12,18 @@ namespace Answers.Views
         {
             InitializeComponent();
             var tabPage = this.FindByName<MainPage>("MainTabPage");
-            tabPage.Children.Add(GetPage(new FundamentalSoftEngineeringInitializer(), "Основы ПО"));
-            tabPage.Children.Add(GetPage(new DataBasesSubjectInitializer(), "БД"));
-            tabPage.Children.Add(GetPage(new ArchitectureAndSoftDesignInitializer(), "Архитектура ПО"));
+            var initializer = new Initializer();
+            tabPage.Children.Add(GetPage(initializer, "Основы ПО", Initializer.SubjectTypes.FundamentalSE));
+            tabPage.Children.Add(GetPage(initializer, "БД", Initializer.SubjectTypes.DataBases));
+            tabPage.Children.Add(GetPage(initializer, "Архитектура ПО", Initializer.SubjectTypes.ArchitectureSE));
+            tabPage.Children.Add(new TestPage());
         }
 
 
-        private Page GetPage(IInitizlizer initizlizer, string pageName)
+        private Page GetPage(IInitializer initizlizer, string pageName, Initializer.SubjectTypes subjectType)
         {
             var page = new QuestionsPage { Title = pageName };
-            var viewModel = new QuestionsViewModel(initizlizer.GetInitizlizedList());
+            var viewModel = new QuestionsViewModel(initizlizer.GetInitizlizedList(subjectType));
             page.BindingContext = viewModel;
             return page;
         }
