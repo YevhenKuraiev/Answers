@@ -2,7 +2,9 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Windows.Input;
 using Answers.Models;
+using Xamarin.Forms;
 
 namespace Answers.ViewModels
 {
@@ -35,6 +37,8 @@ namespace Answers.ViewModels
                 }
             }
         }
+
+        public ICommand RemoveTextCommand => new Command(() => FindingText = string.Empty);
 
         public event PropertyChangedEventHandler PropertyChanged;
 

@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using Android.OS;
 using Answers.Models;
-using KhAITestParser;
+using Answers.Services;
+using Environment = System.Environment;
 
 namespace Answers.DbInitilizers
 {
@@ -10,17 +12,24 @@ namespace Answers.DbInitilizers
     {
         public enum SubjectTypes { DataBases, ArchitectureSE, FundamentalSE, All }
 
-        public List<QuestionModel> GetInitizlizedList(SubjectTypes subjectType)
+        public List<Models.QuestionModel> GetInitizlizedList(SubjectTypes subjectType)
         {
-            var questionsList = new List<QuestionModel>();
+            var questionsList = new List<Models.QuestionModel>();
             foreach (var question in GetQustions(subjectType))
             {
                 string answerText = string.Empty;
-                for (int i = 0; i < question.Answers.Count; i++)
+                for (int i = 0; i < question.Variants.Count; i++)
                 {
-                    answerText += $"{question.Variants[i]}; ";
+                    if (question.Variants.Count > 1 && i != question.Variants.Count - 1)
+                    {
+                        answerText += $"{question.Variants[i]};{Environment.NewLine}";
+                    }
+                    else
+                    {
+                        answerText += $"{question.Variants[i]}.";
+                    }
                 }
-                var questionModel = new QuestionModel
+                var questionModel = new Models.QuestionModel
                 {
                     QuestionText = question.Text,
                     AnswerText = answerText,
@@ -31,12 +40,12 @@ namespace Answers.DbInitilizers
             return questionsList;
         }
 
-        public IEnumerable<Question> GetQustions(SubjectTypes subjectType)
+        public IEnumerable<ParseQuestionModel> GetQustions(SubjectTypes subjectType)
         {
             var assembly = typeof(Initializer).GetTypeInfo().Assembly;
             Stream stream = assembly.GetManifestResourceStream(GetDestinationPath(subjectType));
-            QuestionReader reader = new QuestionReader(stream);
-            IEnumerable<Question> questions = reader.GetInputData();
+            QuestionReaderService readerService = new QuestionReaderService(stream);
+            IEnumerable<ParseQuestionModel> questions = readerService.GetInputData();
             return questions;
         }
 
@@ -44,9 +53,9 @@ namespace Answers.DbInitilizers
         {
             switch (subjectType)
             {
-                case SubjectTypes.FundamentalSE: return "Answers.DbInitilizers.BasicsOfSoftware.json";
-                case SubjectTypes.DataBases: return "Answers.DbInitilizers.BasicsOfSoftware.json";
-                case SubjectTypes.ArchitectureSE: return "Answers.DbInitilizers.secondPart.json";
+                case SubjectTypes.FundamentalSE: return "Answers.DbInitilizers.FundamentalSE.json";
+                case SubjectTypes.DataBases: return "Answers.DbInitilizers.DataBases.json";
+                case SubjectTypes.ArchitectureSE: return "Answers.DbInitilizers.ArchitectureSE.json";
             }
             return string.Empty;
         }

@@ -1,0 +1,128 @@
+{
+  "questions": [
+    {
+      "Text": "1 Найдите ошибку в SQL запросе: SELECT LastName, BirthDay FROM Student GROUP BY student_id ORDER BY student_id",
+      "Variants": [
+        "ошибка после ключевого слова ORDER BY"
+      ]
+    },
+    {
+      "Text": "2 Как получить декартово произведение двух множеств А и В",
+      "Variants": [
+        "SELECT * FROM A, B"
+      ]
+    },
+    {
+      "Text": "3 Найдите ошибку в SQL запросе: SELECT division_id FROM PERSONAL GROUP BY division_id HAVING COUNT(persona_id) > 5 ORDER BY division_id",
+      "Variants": [
+        "ошибки в запросе нет"
+      ]
+    },
+    {
+      "Text": "4 Найдите ошибку в SQL запросе: SELECT P.persona_id, P.division_id FROM Personal P WHERE P.persona_id = 15",
+      "Variants": [
+        "ошибки в запросе нет"
+      ]
+    },
+    {
+      "Text": "5 Найдите ошибку в SQL запросе: SELECT persona_id, division_id FROM Persona p, Division d WHERE p.division_id = d.division_id",
+      "Variants": [
+        "ошибка SELECT persona_id, division_id"
+      ]
+    },
+    {
+      "Text": "6 Найдите ошибку в SQL запросе: SELECT firstname as fname, lastname FROM Persona Where lastname > 5 ORDER BY lastname",
+      "Variants": [
+        "ошибки в запросе нет"
+      ]
+    },
+    {
+      "Text": "7 Найдите ошибку в SQL запросе: SELECT persona_id FROM PERSONA WHERE salary = (SELECT salary FROM PERSONA WHERE division_id = 24)",
+      "Variants": [
+        "ошибки в запросе нет"
+      ]
+    },
+    {
+      "Text": "8 Найдите ошибку в SQL запросе: SELECT persona_id FROM PERSONA WHERE salary > (SELECT AVG(salary) FROM Persona WHERE division_id = 27)",
+      "Variants": [
+          "ошибки в запросе нет"
+      ]
+    },
+    {
+      "Text": "9 Найдите ошибку в SQL запросе: UPDATE TABLE Persona SET salary = 4 WHERE persona_id = 7",
+      "Variants": [
+          "ошибка UPDATE TABLE Persona"
+      ]
+    },
+    {
+      "Text": "10. Найдите ошибку в SQL запросе: CREATE TABLE Persona ( persona_id smallint PRIMARY KEY, group_id tinyint REFERENCES Division (division_id), LastName varchar(20) UNIQUE KEY, salary decimal(5,2))",
+      "Variants": [
+          "ошибки в запросе нет"
+      ]
+    },
+    {
+      "Text": "11 Какие из ниже перечисленных названий являются подъязыками языка SQL:",
+      "Variants": [
+          "DML",
+          "DDL"
+      ]
+    },
+    {
+      "Text": "12. Сколько раз выполнится сопряженный(коррелированный) подзапрос для непустой таблицы:",
+      "Variants": [
+          "столько раз, сколько строк просмотрит внешний запрос"
+      ]
+    },
+    {
+      "Text": "13. Выберите из ниже приведенных запросов тот, который содержит сопряженный (коррелированный) подзапрос:",
+      "Variants": [
+          "Select * from Persona where id IN (Select id from Persona where division_number = 123)"
+      ]
+    },
+    {
+      "Text": "14. Выберите определение 2-ой нормальной формы",
+      "Variants": [
+          "отношение находится во 2-й нормальной форме, если оно находится в 1-ой нормальной форме и нет функциональных зависимостей между неключевыми атрибутами и части первичного ключа"
+      ]
+    },
+    {
+      "Text": "15. Выберите конструкции языка PL/SQL, которые являются циклами",
+      "Variants": [
+          "LOOP END LOOP",
+          "WHILE … LOOP END LOOP"
+      ]
+    },
+    {
+      "Text": "16. Выберите примеры команды SELECT, в которых правильно были использованы агрегатные функции",
+      "Variants": [
+          "Все ответы верны"
+      ]
+    },
+    {
+      "Text": "17. Выберите правильные определения переменных типа запись в языке PL/SQL",
+      "Variants": [
+          "DECLARE salary decimal(5,12)"
+      ]
+    },
+    {
+      "Text": "18. Выберите ключи таблицы, которые можно объявить в одной таблице более одного раза",
+      "Variants": [
+          "UNIQUE",
+          "FOREIGN KEY"
+      ]
+    },
+    {
+      "Text": "19. Выберите правильные определения ключей таблицы, вся команда Create table должна быть правильной",
+      "Variants": [
+          "Create table T(T1 CHAR(10), T2 VARCHAR(5), PRIMARY KEY(T1,T2))"
+      ]
+    },
+    {
+      "Text": "20. Выберите события, на которые может реагировать триггер PL/SQL",
+      "Variants": [
+          "до выполнения команды Delete",
+          "после команды Insert"
+      ]
+    }
+  ]
+}

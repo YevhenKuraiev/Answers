@@ -9,11 +9,16 @@
         <ListView.Header>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" Padding="10">
                 <Image Source="magnifier.png" HeightRequest="20" WidthRequest="20"/>
-                <Entry Text="{Binding FindingText, Mode=OneWayToSource}" 
+                <Entry Text="{Binding FindingText, Mode=TwoWay}" 
                        HorizontalOptions="FillAndExpand"
                        Placeholder="Вопрос?)"
                        PlaceholderColor="Black"
                        Style="{StaticResource LabelStyleBlackRobotoRegular}"/>
+                <Image Source="cancel.png" HeightRequest="20" WidthRequest="20">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding RemoveTextCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
             </StackLayout>
         </ListView.Header>
         <ListView.ItemTemplate>
