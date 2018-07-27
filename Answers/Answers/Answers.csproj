@@ -6,16 +6,17 @@
 
   <ItemGroup>
     <None Remove="DbInitilizers\answers.json" />
-    <None Remove="Images\Architecture\Image1.png" />
-    <None Remove="Images\Shared\magnifier.png" />
+    <None Remove="DbInitilizers\BasicsOfSoftware.json" />
+    <None Remove="DbInitilizers\secondPart.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="DbInitilizers\answers.json">
+    <EmbeddedResource Include="DbInitilizers\BasicsOfSoftware.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Images\Architecture\Image1.png" />
-    <EmbeddedResource Include="Images\Shared\magnifier.png" />
+    <EmbeddedResource Include="DbInitilizers\secondPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>

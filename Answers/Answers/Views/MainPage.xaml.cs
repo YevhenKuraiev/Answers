@@ -14,13 +14,13 @@ namespace Answers.Views
             var tabPage = this.FindByName<MainPage>("MainTabPage");
             var initializer = new Initializer();
             tabPage.Children.Add(GetPage(initializer, "Основы ПО", Initializer.SubjectTypes.FundamentalSE));
-            tabPage.Children.Add(GetPage(initializer, "БД", Initializer.SubjectTypes.DataBases));
+            //tabPage.Children.Add(GetPage(initializer, "БД", Initializer.SubjectTypes.DataBases));
             tabPage.Children.Add(GetPage(initializer, "Архитектура ПО", Initializer.SubjectTypes.ArchitectureSE));
-            tabPage.Children.Add(new TestPage());
+            //tabPage.Children.Add(new TestPage());
         }
 
 
-        private Page GetPage(IInitializer initizlizer, string pageName, Initializer.SubjectTypes subjectType)
+        private Page GetPage(Initializer initizlizer, string pageName, Initializer.SubjectTypes subjectType)
         {
             var page = new QuestionsPage { Title = pageName };
             var viewModel = new QuestionsViewModel(initizlizer.GetInitizlizedList(subjectType));
