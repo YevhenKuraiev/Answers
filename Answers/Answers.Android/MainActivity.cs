@@ -5,7 +5,7 @@ using Android.Views;
 
 namespace Answers.Droid
 {
-    [Activity(Label = "XAI 2018", ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/splashscreen",
+    [Activity(Label = "XAI 2018", ScreenOrientation = ScreenOrientation.Portrait, Icon = "@mipmap/icon",
         Theme = "@style/splashscreen", MainLauncher = true, LaunchMode = LaunchMode.SingleTop,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity

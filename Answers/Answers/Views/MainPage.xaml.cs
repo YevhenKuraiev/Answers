@@ -16,7 +16,6 @@ namespace Answers.Views
             tabPage.Children.Add(GetPage(initializer, "Основы ПО", Initializer.SubjectTypes.FundamentalSE));
             //tabPage.Children.Add(GetPage(initializer, "БД", Initializer.SubjectTypes.DataBases));
             tabPage.Children.Add(GetPage(initializer, "Архитектура ПО", Initializer.SubjectTypes.ArchitectureSE));
-            //tabPage.Children.Add(new TestPage());
         }
 
 
