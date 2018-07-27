@@ -1,19 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
-using System.Reflection;
-using System.Text;
 using Answers.Models;
-using Xamarin.Forms;
 
 namespace Answers.ViewModels
 {
-    internal class QuestionsViewModel : BaseViewModel
+    internal class QuestionsViewModel : INotifyPropertyChanged
     {
+        private ObservableCollection<QuestionModel> _selectedQuestions;
         private string _findingText;
         private readonly List<QuestionModel> _listOfQuestions;
-        public ObservableCollection<QuestionModel> SelectedQuestions { get; set; }
+
+        public ObservableCollection<QuestionModel> SelectedQuestions
+        {
+            get => _selectedQuestions;
+            set
+            {
+                _selectedQuestions = value;
+                OnPropertyChanged("SelectedQuestions");
+            }
+        }
+
         public string FindingText
         {
             get => _findingText;
@@ -22,9 +30,17 @@ namespace Answers.ViewModels
                 if (value != null || value != _findingText)
                 {
                     _findingText = value;
+                    OnPropertyChanged("FindingText");
                     SelectList(FindingText);
                 }
             }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
         public QuestionsViewModel(List<QuestionModel> listOfQuestions)
