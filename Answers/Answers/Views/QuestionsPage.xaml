@@ -2,42 +2,56 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Answers.Views.QuestionsPage">
-    <ListView ItemsSource="{Binding SelectedQuestions}"
+    
+    <AbsoluteLayout x:Name="AbsLayout" VerticalOptions="FillAndExpand">
+        <ListView x:Name="ListView" ItemsSource="{Binding SelectedQuestions}"
                       SelectedItem="{Binding SelectedQuestion, Mode=TwoWay}"
                       HasUnevenRows="True"
+                      VerticalOptions="FillAndExpand"
+                      HeightRequest="{Binding Path=Height, Source={x:Reference AbsLayout}}"
+                  ItemAppearing="ListView_OnItemAppearing"
                       SeparatorColor="Black">
-        <ListView.Header>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" Padding="10">
-                <Image Source="magnifier.png" HeightRequest="20" WidthRequest="20"/>
-                <Entry Text="{Binding FindingText, Mode=TwoWay}" 
+            <ListView.Header>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" Padding="10">
+                    <Image Source="magnifier.png" HeightRequest="20" WidthRequest="20"/>
+                    <Entry Text="{Binding FindingText, Mode=TwoWay}" 
                        HorizontalOptions="FillAndExpand"
                        Placeholder="Вопрос?)"
-                       PlaceholderColor="Black"
+                       PlaceholderColor="Gray"
                        Style="{StaticResource LabelStyleBlackRobotoRegular}"/>
-                <Image Source="cancel.png" HeightRequest="20" WidthRequest="20">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding RemoveTextCommand}"/>
-                    </Image.GestureRecognizers>
-                </Image>
-            </StackLayout>
-        </ListView.Header>
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <ViewCell.View>
-                        <StackLayout Padding="10">
-                            <Label Text="{Binding QuestionText}" 
+                    <Image Source="cancel.png" HeightRequest="20" WidthRequest="20">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding RemoveTextCommand}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding QuestionText}" 
                                    Style="{StaticResource LabelStyleBlackRobotoRegular}"
                                    FontSize="14" />
-                            <Image Source="{Binding QuestionImage}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Image>
-                            <Label Text="{Binding AnswerText}" 
+                                <Image Source="{Binding QuestionImage}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Image>
+                                <Label Text="{Binding AnswerText}" 
                                    Style="{StaticResource LabelStyleBlackRobotoRegular}"
                                    FontAttributes="Bold"
                                    FontSize="16" />
-                        </StackLayout>
-                    </ViewCell.View>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Image x:Name="ImageArrow" Source="upArrow.png" AbsoluteLayout.LayoutBounds="25, 450, 50, 50">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"/>
+            </Image.GestureRecognizers>
+        </Image>
+        
+    </AbsoluteLayout>
+    
 </ContentPage>

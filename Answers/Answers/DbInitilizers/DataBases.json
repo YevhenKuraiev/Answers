@@ -3,7 +3,7 @@
     {
       "Text": "1 Найдите ошибку в SQL запросе: SELECT LastName, BirthDay FROM Student GROUP BY student_id ORDER BY student_id",
       "Variants": [
-        "ошибка после ключевого слова ORDER BY"
+        "ошибка между ключевыми словами SELECT и FROM"
       ]
     },
     {
@@ -55,9 +55,10 @@
       ]
     },
     {
-      "Text": "10. Найдите ошибку в SQL запросе: CREATE TABLE Persona ( persona_id smallint PRIMARY KEY, group_id tinyint REFERENCES Division (division_id), LastName varchar(20) UNIQUE KEY, salary decimal(5,2))",
+      "Text": "10. Найдите ошибку в SQL запросе: CREATE TABLE Persona ( persona_id smallint PRIMARY KEY, group_id tinyint REFERENCES Division (division_id), LastName varchar(20) UNIQUE KEY, salary decimal(5,2)) (НЕКОРРЕКТНЫЙ ВОПРОС!!!)",
       "Variants": [
-          "ошибки в запросе нет"
+          "ошибки в запросе нет (Если MySQL)",
+          "ошибка LastName varchar(20) UNIQUE KEY (Если MS SQL Server)"
       ]
     },
     {
@@ -76,7 +77,8 @@
     {
       "Text": "13. Выберите из ниже приведенных запросов тот, который содержит сопряженный (коррелированный) подзапрос:",
       "Variants": [
-          "Select * from Persona where id IN (Select id from Persona where division_number = 123)"
+          "Select * from Persona where id IN (Select id from Persona where division_number = 123)",
+          "Select * from Persona pa where avg_salary > (Select AVG(avg_salary) from Persona pb where pa.division_number = pb.division_number)"
       ]
     },
     {
@@ -95,13 +97,16 @@
     {
       "Text": "16. Выберите примеры команды SELECT, в которых правильно были использованы агрегатные функции",
       "Variants": [
-          "Все ответы верны"
+          "Select AVG(salary) as average_salary from Persona",
+          "Select COUNT(DISTINCT division_number) from Persona",
+          "Select division_number from Persona group by division_number having AVG(salary) > 35"
       ]
     },
     {
-      "Text": "17. Выберите правильные определения переменных типа запись в языке PL/SQL",
+      "Text": "17. Выберите правильные определения переменных типа запись в языке PL/SQL (НЕКОРЕКТНЫЙ ВОПРОС!!!)",
       "Variants": [
-          "DECLARE salary decimal(5,12)"
+          "ни один из ответов не подходит (Наиболее вероятно)",
+          "DECLARE cur1 CURSOR FOR SELECT id, data FROM test.t1; (ВероятноБ но ошибку выбивает)"
       ]
     },
     {
@@ -112,7 +117,7 @@
       ]
     },
     {
-      "Text": "19. Выберите правильные определения ключей таблицы, вся команда Create table должна быть правильной",
+      "Text": "19. Выберите правильные определения ключей таблицы, вся команда Create table должна быть правильной (Не уверен по ответам! Нужно знать СУБД!)",
       "Variants": [
           "Create table T(T1 CHAR(10), T2 VARCHAR(5), PRIMARY KEY(T1,T2))"
       ]
