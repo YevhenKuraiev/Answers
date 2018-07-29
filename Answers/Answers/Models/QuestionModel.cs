@@ -1,12 +1,14 @@
-﻿using Xamarin.Forms;
-
-namespace Answers.Models
+﻿namespace Answers.Models
 {
-    internal class QuestionModel
+    class QuestionModel
     {
-        public string QuestionText { get; set; }
-        public ImageSource QuestionImage { get; set; }
-        public string AnswerText { get; set; }
+        public string Question { get; set; }
+        public string Answer { get; set; }
 
+        public QuestionModel(string question, string answer)
+        {
+            Question = question;
+            Answer = answer;
+        }
     }
 }

@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="English"
              x:Class="Answers.Views.QuestionsPage">
     
     <AbsoluteLayout x:Name="AbsLayout" VerticalOptions="FillAndExpand">
-        <ListView x:Name="ListView" ItemsSource="{Binding SelectedQuestions}"
+        <ListView x:Name="MainListView" ItemsSource="{Binding SelectedQuestions}"
                       SelectedItem="{Binding SelectedQuestion, Mode=TwoWay}"
                       HasUnevenRows="True"
                       VerticalOptions="FillAndExpand"
@@ -14,14 +15,14 @@
             <ListView.Header>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" Padding="10">
                     <Image Source="magnifier.png" HeightRequest="20" WidthRequest="20"/>
-                    <Entry Text="{Binding FindingText, Mode=TwoWay}" 
+                    <Entry x:Name="FindEntry" Text="{Binding FindingText, Mode=TwoWay}" 
                        HorizontalOptions="FillAndExpand"
                        Placeholder="Вопрос?)"
                        PlaceholderColor="Gray"
                        Style="{StaticResource LabelStyleBlackRobotoRegular}"/>
                     <Image Source="cancel.png" HeightRequest="20" WidthRequest="20">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding RemoveTextCommand}"/>
+                            <TapGestureRecognizer Tapped="ImageTapGestureRecognizer_OnTapped" />
                         </Image.GestureRecognizers>
                     </Image>
                 </StackLayout>
@@ -31,11 +32,10 @@
                     <ViewCell>
                         <ViewCell.View>
                             <StackLayout Padding="10">
-                                <Label Text="{Binding QuestionText}" 
+                                <Label Text="{Binding Question}" 
                                    Style="{StaticResource LabelStyleBlackRobotoRegular}"
                                    FontSize="14" />
-                                <Image Source="{Binding QuestionImage}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Image>
-                                <Label Text="{Binding AnswerText}" 
+                                <Label Text="{Binding Answer}" 
                                    Style="{StaticResource LabelStyleBlackRobotoRegular}"
                                    FontAttributes="Bold"
                                    FontSize="16" />

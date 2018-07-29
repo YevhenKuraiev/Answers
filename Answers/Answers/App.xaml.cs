@@ -1,5 +1,4 @@
 using Answers.Views;
-using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,7 +11,7 @@ namespace Answers
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
+			MainPage = new QuestionsPage();
 		}
 
 		protected override void OnStart ()

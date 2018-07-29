@@ -1,63 +1,25 @@
 ﻿using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-using Android.OS;
 using Answers.Models;
-using Answers.Services;
-using Environment = System.Environment;
 
 namespace Answers.DbInitilizers
 {
     internal class Initializer
     {
-        public enum SubjectTypes { DataBases, ArchitectureSE, FundamentalSE, All }
-
-        public List<Models.QuestionModel> GetInitizlizedList(SubjectTypes subjectType)
+        public List<QuestionModel> GetInitizlizedList()
         {
-            var questionsList = new List<Models.QuestionModel>();
-            foreach (var question in GetQustions(subjectType))
-            {
-                string answerText = string.Empty;
-                for (int i = 0; i < question.Variants.Count; i++)
-                {
-                    if (question.Variants.Count > 1 && i != question.Variants.Count - 1)
-                    {
-                        answerText += $"{question.Variants[i]};{Environment.NewLine}";
-                    }
-                    else
-                    {
-                        answerText += $"{question.Variants[i]}.";
-                    }
-                }
-                var questionModel = new Models.QuestionModel
-                {
-                    QuestionText = question.Text,
-                    AnswerText = answerText,
-                    QuestionImage = question.ImageSrc
-                };
-                questionsList.Add(questionModel);
-            }
-            return questionsList;
+            var list = new List<QuestionModel>();
+            list.Add(new QuestionModel("1. His cousin doesn't go to _____ school on _____ Sunday.", "А) — , —"));
+            list.Add(new QuestionModel("2. He didn't even know ______ Browns had a daughter.", "А) —"));
+            list.Add(new QuestionModel("3. ______ Dnieper is	_______ main river in ______ Ukraine.", "А) — , the, —"));
+            list.Add(new QuestionModel("4. _______ Parkers won lottery last week.", "А) —"));
+            list.Add(new QuestionModel("5. He bought _____ book at the supermarket yesterday.", "D) the"));
+            list.Add(new QuestionModel("6. The bee was buzzing among ____ flowers in the vase.", "D) the"));
+            list.Add(new QuestionModel("7. He turned and saw _____ crying boy.", "D) the"));
+            list.Add(new QuestionModel("8. What _____ marvelous English souvenirs you’ve bought!", "А) —"));
+
+            list.Add(new QuestionModel("8. What _____ marvelous English souvenirs you’ve bought!", "А) —"));
+            return list;
         }
 
-        public IEnumerable<ParseQuestionModel> GetQustions(SubjectTypes subjectType)
-        {
-            var assembly = typeof(Initializer).GetTypeInfo().Assembly;
-            Stream stream = assembly.GetManifestResourceStream(GetDestinationPath(subjectType));
-            QuestionReaderService readerService = new QuestionReaderService(stream);
-            IEnumerable<ParseQuestionModel> questions = readerService.GetInputData();
-            return questions;
-        }
-
-        private string GetDestinationPath(SubjectTypes subjectType)
-        {
-            switch (subjectType)
-            {
-                case SubjectTypes.FundamentalSE: return "Answers.DbInitilizers.FundamentalSE.json";
-                case SubjectTypes.DataBases: return "Answers.DbInitilizers.DataBases.json";
-                case SubjectTypes.ArchitectureSE: return "Answers.DbInitilizers.ArchitectureSE.json";
-            }
-            return string.Empty;
-        }
     }
 }
