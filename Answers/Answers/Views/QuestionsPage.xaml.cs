@@ -30,8 +30,11 @@ namespace Answers.Views
 	    {
 	        var items = MainListView.ItemsSource as ObservableCollection<QuestionModel>;
 	        var currentIdx = items?.IndexOf((QuestionModel) e.Item);
-	        ImageArrow.IsVisible = currentIdx > 12;
-	        FindEntry.Unfocus();
+	        ImageArrow.IsVisible = currentIdx > 20;
+	        if (currentIdx > 15)
+	        {
+	            FindEntry.Unfocus();
+            }
         }
 
 	    private void TapGestureRecognizer_OnTapped(object sender, EventArgs e)
@@ -45,7 +48,6 @@ namespace Answers.Views
             FindEntry.Unfocus();
             FindEntry.Text = string.Empty;
             FindEntry.Focus();
-
 	    }
 	}
 }

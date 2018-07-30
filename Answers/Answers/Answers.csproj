@@ -5,7 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="answers.json" />
     <None Remove="DbInitilizers\answers.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="DbInitilizers\answers.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>

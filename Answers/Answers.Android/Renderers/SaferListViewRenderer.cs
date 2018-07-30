@@ -1,4 +1,6 @@
 ﻿using Android.Content;
+using Android.Support.V7.Widget;
+using Android.Views;
 using Android.Views.InputMethods;
 using Android.Widget;
 using Answers.Droid.Renderers;
@@ -12,7 +14,6 @@ namespace Answers.Droid.Renderers
     {
         public SaferListViewRenderer(Context context) : base(context)
         {
-                
         }
 
         protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.ListView> e)
@@ -21,6 +22,7 @@ namespace Answers.Droid.Renderers
             if (this.Control == null) return;
             this.Control.Recycler -= ClearViewFocus;
             this.Control.Recycler += ClearViewFocus;
+            //this.Control.DescendantFocusability = DescendantFocusability.BlockDescendants;
         }
 
         private void ClearViewFocus(object sender, AbsListView.RecyclerEventArgs args)

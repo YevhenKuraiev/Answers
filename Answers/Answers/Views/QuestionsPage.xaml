@@ -9,6 +9,7 @@
                       SelectedItem="{Binding SelectedQuestion, Mode=TwoWay}"
                       HasUnevenRows="True"
                       VerticalOptions="FillAndExpand"
+                      CachingStrategy="RecycleElement"
                       HeightRequest="{Binding Path=Height, Source={x:Reference AbsLayout}}"
                   ItemAppearing="ListView_OnItemAppearing"
                       SeparatorColor="Black">
@@ -29,7 +30,14 @@
             </ListView.Header>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
+
+                    <TextCell
+                        Text="{Binding Question}"
+                        Detail="{Binding Answer}"
+                        TextColor="DarkGray"
+                        DetailColor="Black"/>
+
+                    <!--<ViewCell>
                         <ViewCell.View>
                             <StackLayout Padding="10">
                                 <Label Text="{Binding Question}" 
@@ -41,7 +49,7 @@
                                    FontSize="16" />
                             </StackLayout>
                         </ViewCell.View>
-                    </ViewCell>
+                    </ViewCell>-->
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Answers.Models;
 
 namespace Answers.DbInitilizers
@@ -112,6 +113,10 @@ namespace Answers.DbInitilizers
             list.Add(new QuestionModel("31. We'll have to leave a bit ____ than we planned", "B) earlier"));
             list.Add(new QuestionModel("32. What is ____ river in the world?", "D) the longest"));
             list.Add(new QuestionModel("33. February was ____ month of the year", "B) the coldest"));
+
+
+
+            list.AddRange(new QuestionReaderService("Answers.DbInitilizers.answers.json").GetInputData().ToList());
             return list;
         }
 
