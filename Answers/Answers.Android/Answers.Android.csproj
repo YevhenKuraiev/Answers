@@ -50,6 +50,8 @@
     <EnableLLVM>false</EnableLLVM>
     <AndroidLinkSkip>
     </AndroidLinkSkip>
+    <AndroidEnableSGenConcurrent>false</AndroidEnableSGenConcurrent>
+    <EnableProguard>false</EnableProguard>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />

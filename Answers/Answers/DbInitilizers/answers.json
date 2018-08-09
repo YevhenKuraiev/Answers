@@ -1999,6 +1999,278 @@
     {
       "Question": "You _____ smoke near children",
       "Answer": "shouldn‟t't"
+    },
+    {
+      "Question": "34. Kids listened to the new teacher _______ we expected",
+      "Answer": "B) more patiently than"
+    },
+    {
+      "Question": "35. Cars are twice _______ they were a year ago",
+      "Answer": "D) as expensive as"
+    },
+    {
+      "Question": "36. I can't hear you. Can you speak _______?",
+      "Answer": "B) louder"
+    },
+    {
+      "Question": "37. Ben _______ to us since he changed his address",
+      "Answer": "C) hasn't written"
+    },
+    {
+      "Question": "38. Kevin hopes he _______ all over the world by that time",
+      "Answer": "A) will have travelled"
+    },
+    {
+      "Question": "39. When we go to Paris, we _______ the Eiffel Tower",
+      "Answer": "A) will climb"
+    },
+    {
+      "Question": "40. By the time Rick retires, he _______ for the same company for thirty years",
+      "Answer": "C) will have worked"
+    },
+    {
+      "Question": "41. Dad _______ to work by the time I woke up",
+      "Answer": "C) had already gone"
+    },
+    {
+      "Question": "42. The bills _______ by Friday",
+      "Answer": "D) will have been paid"
+    },
+    {
+      "Question": "43. Computers _______ more and more efficient",
+      "Answer": "C) are becoming"
+    },
+    {
+      "Question": "44. These reports _______ two years ago",
+      "Answer": "A) were published"
+    },
+    {
+      "Question": "45. Mr. Johnson and his wife _______ Italian for three years now",
+      "Answer": "D) have been learning"
+    },
+    {
+      "Question": "46. My teeth _______ by the dentist tomorrow",
+      "Answer": "B) will be checked"
+    },
+    {
+      "Question": "47. The program _______ on Sunday",
+      "Answer": "B) will be broadcast"
+    },
+    {
+      "Question": "48. This time next week I _______ in the Highlands",
+      "Answer": "C) will be walking"
+    },
+    {
+      "Question": "49. Mary _______ to Singapore at three tomorrow morning",
+      "Answer": "A) will be flying"
+    },
+    {
+      "Question": "50. Nobody _______ harder than Tom does",
+      "Answer": "D) works"
+    },
+    {
+      "Question": "51. I always _______ computer things by mail order",
+      "Answer": "B) buy"
+    },
+    {
+      "Question": "52. The US President _______ for health reasons. He _______ his decision a few minutes ago",
+      "Answer": "C) resigned, announced"
+    },
+    {
+      "Question": "53. _______ any plans for the weekend? - Yes, I _______ visit my sister",
+      "Answer": "A) Have you made, am going to"
+    },
+    {
+      "Question": "54. My suggestions _______ at again now",
+      "Answer": "A) are being laughed"
+    },
+    {
+      "Question": "55. The project was very expensive. It _______ millions of pounds",
+      "Answer": "B) cost"
+    },
+    {
+      "Question": "56. The BBC World Service _______. It _______ all over the world",
+      "Answer": "D) is well known, is listened to"
+    },
+    {
+      "Question": "57. Paul _______ to Tina when I saw him",
+      "Answer": "A) w'as talking"
+    },
+    {
+      "Question": "58. Concord, the world's fastest passenger plane, _______ by France and Britain together",
+      "Answer": "D) was developed"
+    },
+    {
+      "Question": "59. Where _______? - In France",
+      "Answer": "B) is champagne produced"
+    },
+    {
+      "Question": "60. I've _______ to most countries in Europe, but I've never _______ to Russia",
+      "Answer": "A) been, been"
+    },
+    {
+      "Question": "61. Can I speak to Mr. Thompson, please? - I'm afraid he _______ out of the office",
+      "Answer": "A) has just gone"
+    },
+    {
+      "Question": "62. Simon this week? - No, he _______ to Greece",
+      "Answer": "B) Have you seen, has gone"
+    },
+    {
+      "Question": "63. The streets are wet _______?",
+      "Answer": "D) Has it been raining"
+    },
+    {
+      "Question": "64. Mark has borrowed our CDs. - Well, I hope he brings _______",
+      "Answer": "C) them back"
+    },
+    {
+      "Question": "65. What happened to the TV set? - A man came and took it _______",
+      "Answer": "D) away"
+    },
+    {
+      "Question": "66. A piece of cheese will keep _______ hunger for a time",
+      "Answer": "A) off"
+    },
+    {
+      "Question": "67. We began to work at 12 and went _______ till half-past one",
+      "Answer": "D) on"
+    },
+    {
+      "Question": "34. Kids listened to the new teacher _______ we expected",
+      "Answer": "B) more patiently than"
+    },
+    {
+      "Question": "35. Cars are twice _______ they were a year ago",
+      "Answer": "D) as expensive as"
+    },
+    {
+      "Question": "36. I can't hear you. Can you speak _______?",
+      "Answer": "B) louder"
+    },
+    {
+      "Question": "37. Ben _______ to us since he changed his address",
+      "Answer": "C) hasn't written"
+    },
+    {
+      "Question": "38. Kevin hopes he _______ all over the world by that time",
+      "Answer": "A) will have travelled"
+    },
+    {
+      "Question": "39. When we go to Paris, we _______ the Eiffel Tower",
+      "Answer": "A) will climb"
+    },
+    {
+      "Question": "40. By the time Rick retires, he _______ for the same company for thirty years",
+      "Answer": "C) will have worked"
+    },
+    {
+      "Question": "41. Dad _______ to work by the time I woke up",
+      "Answer": "C) had already gone"
+    },
+    {
+      "Question": "42. The bills _______ by Friday",
+      "Answer": "D) will have been paid"
+    },
+    {
+      "Question": "43. Computers _______ more and more efficient",
+      "Answer": "C) are becoming"
+    },
+    {
+      "Question": "44. These reports _______ two years ago",
+      "Answer": "A) were published"
+    },
+    {
+      "Question": "45. Mr. Johnson and his wife _______ Italian for three years now",
+      "Answer": "D) have been learning"
+    },
+    {
+      "Question": "46. My teeth _______ by the dentist tomorrow",
+      "Answer": "B) will be checked"
+    },
+    {
+      "Question": "47. The program _______ on Sunday",
+      "Answer": "B) will be broadcast"
+    },
+    {
+      "Question": "48. This time next week I _______ in the Highlands",
+      "Answer": "C) will be walking"
+    },
+    {
+      "Question": "49. Mary _______ to Singapore at three tomorrow morning",
+      "Answer": "A) will be flying"
+    },
+    {
+      "Question": "50. Nobody _______ harder than Tom does",
+      "Answer": "D) works"
+    },
+    {
+      "Question": "51. I always _______ computer things by mail order",
+      "Answer": "B) buy"
+    },
+    {
+      "Question": "52. The US President _______ for health reasons. He _______ his decision a few minutes ago",
+      "Answer": "C) resigned, announced"
+    },
+    {
+      "Question": "53. _______ any plans for the weekend? - Yes, I _______ visit my sister",
+      "Answer": "A) Have you made, am going to"
+    },
+    {
+      "Question": "54. My suggestions _______ at again now",
+      "Answer": "A) are being laughed"
+    },
+    {
+      "Question": "55. The project was very expensive. It _______ millions of pounds",
+      "Answer": "B) cost"
+    },
+    {
+      "Question": "56. The BBC World Service _______. It _______ all over the world",
+      "Answer": "D) is well known, is listened to"
+    },
+    {
+      "Question": "57. Paul _______ to Tina when I saw him",
+      "Answer": "A) w'as talking"
+    },
+    {
+      "Question": "58. Concord, the world's fastest passenger plane, _______ by France and Britain together",
+      "Answer": "D) was developed"
+    },
+    {
+      "Question": "59. Where _______? - In France",
+      "Answer": "B) is champagne produced"
+    },
+    {
+      "Question": "60. I've _______ to most countries in Europe, but I've never _______ to Russia",
+      "Answer": "A) been, been"
+    },
+    {
+      "Question": "61. Can I speak to Mr. Thompson, please? - I'm afraid he _______ out of the office",
+      "Answer": "A) has just gone"
+    },
+    {
+      "Question": "62. Simon this week? - No, he _______ to Greece",
+      "Answer": "B) Have you seen, has gone"
+    },
+    {
+      "Question": "63. The streets are wet _______?",
+      "Answer": "D) Has it been raining"
+    },
+    {
+      "Question": "64. Mark has borrowed our CDs. - Well, I hope he brings _______",
+      "Answer": "C) them back"
+    },
+    {
+      "Question": "65. What happened to the TV set? - A man came and took it _______",
+      "Answer": "D) away"
+    },
+    {
+      "Question": "66. A piece of cheese will keep _______ hunger for a time",
+      "Answer": "A) off"
+    },
+    {
+      "Question": "67. We began to work at 12 and went _______ till half-past one",
+      "Answer": "D) on"
     }
   ]
 }
